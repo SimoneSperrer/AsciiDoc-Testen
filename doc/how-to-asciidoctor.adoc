@@ -1,0 +1,211 @@
+= How to AsciiDoc [[top]]
+
+== Überschriften
+[source]
+----
+= H1 (Titel)
+== H2 (Überschrift)
+=== H3 (Unterüberschrift)
+==== H4 (...)
+===== H5
+====== H6
+----
+*H6* ist die kleinstmögliche Überschrift in AsciiDoc
+
+== Text Formatierung
+
+=== Bold
+[source]
+----
+*constrained* & **un**constrained
+----
+*constrained* & **un**constrained
+
+=== Italic
+[source]
+----
+_constrained_ & __un__constrained
+----
+_constrained_ & __un__constrained
+
+=== Bold & Italic
+[source]
+----
+*_constrained_* & **__un__**constrained
+----
+*_constrained_* & **__un__**constrained
+
+=== Monospace
+[source]
+----
+`constrained` & ``un``constrained
+----
+`constrained` & ``un``constrained
+
+=== Monospace & Bold
+[source]
+----
+`*constrained*` & ``**un**``constrained
+----
+`*constrained*` & ``**un**``constrained
+
+=== Monospace & Italic
+[source]
+----
+`_constrained_` & ``__un__``constrained
+----
+`_constrained_` & ``__un__``constrained
+
+=== Monospace & Bold & Italic
+[source]
+----
+`*_constrained_*` & ``**__un__**``constrained
+----
+`*_constrained_*` & ``**__un__**``constrained
+
+== Aufzählungen
+
+=== Ungeordnet
+* Erster Punkt
+* Zweiter Punkt
+[source]
+----
+* Erster Punkt
+* Zweiter Punkt
+----
+
+=== Geordnet
+. Erster Punkt
+. Zweiter Punkt
+[source]
+----
+. Erster Punkt
+. Zweiter Punkt
+----
+
+=== Verschachtelt
+* Hauptpunkt 1
+** Unterpunkt 1.1
+** Unterpunkt 1.2
+* Hauptpunkt 2
+
+[source]
+----
+* Hauptpunkt 1
+** Unterpunkt 1.1
+** Unterpunkt 1.2
+* Hauptpunkt 2
+----
+
+
+
+== Tabellen
+|===
+| Name | Alter | Beruf
+| Lisa | 24    | Entwicklerin
+| Max  | 30    | Designer
+|===
+[source]
+----
+|===
+| Name | Alter | Beruf
+| Lisa | 24    | Entwicklerin
+| Max  | 30    | Designer
+|===
+----
+
+== Hyperlinks
+=== Externe Links
+https://www.google.com[Google]
+
+[source]
+----
+https://www.google.com[Google]
+----
+
+=== Interne Links
+
+<<top,Zurück zum Anfang>>
+
+[source]
+----
+<<top,Zurück zum Anfang>>
+----
+
+Das Top verweist auf den Anker der in der Überschrift gesetzt worden ist:
+[source]
+----
+= How to AsciiDoc [[top]]
+----
+
+== Erstellen von Websites und Slides mit Asciidoctor
+. Mit Template ein Repo erstellen
+. Repo klonen
+. Änderungen commite und pushen
+. In den Settings des gh-repo gh-pages auswählen
+
+== Admontions
+
+[NOTE]
+Das ist eine Notiz
+
+[source]
+----
+[NOTE]
+Das ist eine Notiz
+----
+
+[TIP]
+Das ist ein Tip
+
+[source]
+----
+[TIP]
+Das ist ein Tip
+----
+
+Es gibt folgende Admontions:
+
+* NOTE
+* TIP
+* IMPORTANT
+* CAUTION
+* WARNING
+
+== Callouts
+=== Manuel
+    [source, java]
+    ----
+    System.out.println("Hello World");<1>
+    System.out.println("Hello Simone");<2>
+    ----
+    <1> Gibt auf der Konsole "Hello World" aus
+    <2> Gibt auf der Konsole "Hello Simone" aus
+
+Ergebnis:
+[source, java]
+----
+System.out.println("Hello World");<1>
+System.out.println("Hello Simone");<2>
+----
+<1> Gibt auf der Konsole "Hello World" aus
+<2> Gibt auf der Konsole "Hello Simone" aus
+
+=== Automatisch
+    [source, java]
+    ----
+    System.out.println("Hello World");<.>
+    System.out.println("Hello Simone");<.>
+    ----
+    <.> Gibt auf der Konsole "Hello World" aus
+    <.> Gibt auf der Konsole "Hello Simone" aus
+
+Ergebnis:
+[source, java]
+----
+System.out.println("Hello World");<.>
+System.out.println("Hello Simone");<.>
+----
+<.> Gibt auf der Konsole "Hello World" aus
+<.> Gibt auf der Konsole "Hello Simone" aus
+
